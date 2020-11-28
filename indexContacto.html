@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--La plantilla guía para esta página fue tomada de https://startbootstrap.com/template/modern-business-->
+  <head>
+
+    <!--Metas-->
+  <meta name="description" content="Kruxica" />
+  <meta name="keywords" content="Musica, Artistas, Eventos" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Kruxica</title>
+
+  <!-- Boostrap y CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos Personalizados -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!--Css del Home-->
+  <link rel="stylesheet" type="text/css" href="css/contacto.css" />
+
+  <!--Css para la barra social-->
+  <link rel="stylesheet" href="font.css"/>
+
+  <!--Icono del la página-->
+  <link rel="icon" href="images/LogoFinal.png">
+
+  <!--Script para implementar el correo-->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <img src="images/LogoFinal.png" alt="" width="70" height="70">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexEventos.html">Eventos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexMusica2.html">Música</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexSobreNosotros.html">Acerca de Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexHistoria.html">Historia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexContacto.html">Contáctenos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Inicio del contenido-->
+  <div class="container">
+    <!--Título-->
+    <h1 class="mt-4 mb-3">Contáctanos</h1>
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+        <!--Inicio del form-->
+        <form name="sentMessage" id="contactForm" novalidate>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Nombre:</label>
+              <input type="text" class="form-control" id="name">
+              <p class="help-block"></p>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Número Telefónico:</label>
+              <input type="tel" class="form-control" id="phone">
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Correo Electrónico:</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Mensaje:</label>
+              <textarea rows="10" cols="100" class="form-control" id="message"></textarea>
+            </div>
+          </div>
+          <div id="success"></div>
+          <div class="form-row">
+
+            <div class="form-group col-md-12">
+                 <buttontype="button" class="btn btn-primary btn block" data-toggle="modal" data-target="#identificarmodal" onclick="sendEmail();">Enviar</button>
+            </div>
+        </div>
+        <!--Modal-->
+        <div class="modal fade" id="identificarmodal" tabindex="-1" aria-labelledby="label-modal" aria-hidden="true">
+
+          <div class="modal-dialog">
+  
+              <div class="modal-content">
+  
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="label-modal">¡Mensaje enviado correctamente!</h5>
+                  </div>
+  
+                  <div class="modal-body">
+                      <p>Gracias por tu mensaje </p>
+                  </div>
+  
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  </div>
+  
+              </div>
+  
+          </div>
+       </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <!--Fin del contenido-->
+
+  <!--Pie de página-->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Kruxica 2020</p>
+    </div>
+  </footer>
+
+  <!--Scripts-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+  <script src="js/correo.js"></script>
+
+</body>
+
+</html>

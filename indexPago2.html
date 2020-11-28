@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--La plantilla guía para esta página fue tomada de https://startbootstrap.com/template/modern-business-->
+  <head>
+
+    <!--Metas-->
+  <meta name="description" content="Kruxica" />
+  <meta name="keywords" content="Musica, Artistas, Eventos" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Kruxica</title>
+
+  <!-- Boostrap y CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos Personalizados -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!--Css del Home-->
+  <link rel="stylesheet" type="text/css" href="css/pago.css" />
+
+  <!--Css para la barra social-->
+  <link rel="stylesheet" href="font.css"/>
+
+  <!--Icono del la página-->
+  <link rel="icon" href="images/LogoFinal.png">
+
+  <script src="js/pago.js"></script>
+
+</head>
+
+
+<body>
+
+  <!--Menú de navegación-->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <img src="images/LogoFinal.png" alt="" width="70" height="70">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexEventos.html">Eventos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexMusica2.html">Música</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexSobreNosotros.html">Acerca de Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexHistoria.html">Historia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="indexContacto.html">Contáctenos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Contenido-->
+  <div class="container">
+
+    <!--Título-->
+    <h1 class="mt-4 mb-3">Pago de entradas</h1>
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+        <form name="sentMessage" id="pago" novalidate>
+
+          <p>En esta página se debe llenar el formulario con el nombre, apellido, dirección, correo electrónico y la cantidad de entradas que 
+            desea comprar, pulsando el botón de "Consultar precio" se puede ver cuánto sería el total por pagar, ya sea para una entrada normal o 
+            una entrada VIP, pulsando el botón de "Comprar entradas" nos dirigiremos a una ventana la cual tendrá un formulario en el cual se deberá
+            llenar con los datos de la tarjeta de crédito, ya sea VISA ó Master-Card.
+          </p>
+          <!--Inicio del form-->
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Nombre:</label>
+              <input type="text" class="form-control" id="name" required data-validation-required-message="Por favor ingrese su nombre.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Apellido:</label>
+              <input type="text" class="form-control" id="name" required data-validation-required-message="Por favor ingrese su nombre.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Dirección:</label>
+              <input type="text" class="form-control" id="name" required data-validation-required-message="Por favor ingrese su nombre.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Correo electrónico:</label>
+              <input type="email" class="form-control" id="name" required data-validation-required-message="Por favor ingrese su nombre.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Fecha de nacimiento:</label>
+              <input type="date" name="">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              <p>Género:</p>
+              <input type="radio" id="male" name="gender" value="male">
+              <label>Masculino</label><br>
+              <input type="radio" id="female" name="gender" value="female">
+              <label>Fenemino</label><br>
+              <input type="radio" id="other" name="gender" value="other">
+              <label for="other">Otro</label>
+              <p class="help-block"></p>
+            </div>
+          </div><br>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Cantidad de entradas:</label>
+              <input type="number" name="" id= "cantidad" min="1" max="5">
+              <p class="help-block"></p>
+            </div>
+          </div>
+
+          <br>
+
+          <p class="btn btn-primary" onclick="precioPagarNormal();">Calcular precio de entradas normales </p>
+          
+          <br/>
+          <br/>
+
+          <p class="btn btn-primary" onclick="precioPagarVIP();">Calcular precio de entradas con camping</p>
+
+          <br/>
+          <p >El precio por pagar sería $ <span id="el-resultado"></span> </p>
+          <br/>
+            
+          <a href="indexTarjeta.html" class="btn btn-primary">Comprar entradas </a>
+
+        </form>
+        <br>
+        <h1>Nota</h1>
+        <p>1.El impuesto de ventas ya está implementado en el precio al momento de presionar el botón de calcular el precio.</p>
+        <p>2.Todos los eventos son en espacios abiertos, por ende recomendamos que le dé un vistazo al clima para que pueda prepararse y así
+          evitar incidentes.
+        </p>
+        <img class= "icono">
+        <p class= "cuidad">Ciudad: </p>
+        <p class= "temp">Temperatura: </p>
+      </div>
+
+    </div>
+  </div>
+  <!--Fin del contenido-->
+
+  <!--Pie de página-->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Kruxica 2020</p>
+    </div>
+    <!--Fin del pie de página-->
+  </footer>
+
+  <!--Scripts-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/pagoEvento2.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="js/climaProyecto2.js"></script>
+
+
+</body>
+
+</html>
